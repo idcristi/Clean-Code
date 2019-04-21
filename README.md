@@ -19,7 +19,7 @@
 4. Smaller code is better.
 5. The code should be literate.
 ***
-### Chapter 3 - Functions
+## Chapter 3 - Functions
 1. First Rule:  Functions should be small
 2. Second Rule: They should be smaller than that
 3. Functions should do one thing. They should do it well. They should do it only.
@@ -36,7 +36,7 @@ Every function and every block within a function should have one entry and one e
 
 ****
 
-### Chapter 4 - Comments
+## Chapter 4 - Comments
 Don't comment bad code try to rewrite it.
 Good Comments are:
 1. Legal Comments
@@ -50,7 +50,7 @@ Bad Comments are:
 
 ****
 
-### Chapter 5 - Formatting
+## Chapter 5 - Formatting
 #### Vertical Formatting
 
 Try to keep max length around 500 lines long and smaller is better.  
@@ -67,7 +67,7 @@ Conceptual affinity – when methods do similar things or are named similarly, t
 Vertical ordering of methods – the caller should be first, then the callee, and that method’s callee, etc…on down the page.  
 
 ****
-### Chapter 9 - Unit Testing
+## Chapter 9 - Unit Testing
 The Three Laws of TDD:  
 TDD asks us to write unit tests first, before we write production code. Consider the following three laws:  
 **First Law**: You may not write production code until you have written a failing unit test.  
@@ -89,7 +89,7 @@ T - Timely
 
 ****
 
-### Chapter 10 – Classes
+## Chapter 10 – Classes
 Classes Should be small.
 Following the standard Java convention, a class should begin with a list of variables. Public static constants, if any, should come first. Then private static variables, followed by private instance variables. There is seldom a good reason to have a public variable.
 Public functions should follow the list of variables. We like to put the private utilities called by a public function right after the public function itself. This follows the stepdown rule and helps the program read like a newspaper article.
@@ -106,7 +106,7 @@ In general it is neither advisable nor possible to create such maximally cohesiv
 
 ***
 
-### Chapter 11 – Systems
+## Chapter 11 – Systems
 #### Dependency Injection
 A powerful mechanism for separating construction from use is Dependency Injection (DI), the application of Inversion of Control (IoC) to dependency management. Inversion of Control moves secondary responsibilities from an object to other objects that are dedicated to the purpose, thereby supporting the Single Responsibility Principle.
 In the context of dependency management, an object should not take responsibility for instantiating dependencies itself. Instead, it should pass this responsibility to another “authoritative” mechanism, thereby inverting the control. Because setup is a global concern, this authoritative mechanism will usually be either the “main” routine or a special-purpose container.
@@ -114,7 +114,7 @@ The Spring Framework provides the best known DI container for Java. You define w
 
 ***
 
-### Chapter 12 – Emergence
+## Chapter 12 – Emergence
 **Four rules of simple design are:**
 1. Runs all the tests
 2. Contains no duplication
@@ -132,7 +132,7 @@ Once we have tests, we are empowered to keep our code and classes clean. We do t
 During this refactoring step, we can apply anything from the entire body of knowledge about good software design. We can increase cohesion, decrease coupling, separate concerns, modularize system concerns, shrink our functions and classes, choose better names, and so on. This is also where we apply the final three rules of simple design: Eliminate duplication, ensure expressiveness, and minimize the number of classes and methods.
 
 ***
-### Chapter 13 - Concurrency
+## Chapter 13 - Concurrency
 ##### Concurrency
 Objects are abstractions of processing. Threads are abstractions of schedule.”
 
@@ -153,16 +153,18 @@ Corollary: Limit the Scope of Data
 Corollary: Threads Should Be as Independent as Possible
 Thread-Safe Collections***
 
-There are several other kinds of classes added to support advanced concurrency design. Here are a few examples:  
+There are several other kinds of classes added to support advanced concurrency design. Here are a few examples:      
+
 Classes | Description
-| ------------- |:-------------:|
-|**ReentrantLock**| A lock that can be acquired in one method and released in another.|
+| ------------- |:-------------|
+|**ReentrantLock**|  A lock that can be acquired in one method and released in another.|
 |**Semaphore**| An implementation of the classic semaphore, a lock with a count.|
-| **CountDownLatch**| A lock that waits for a number of events before releasing all threads waiting on it. This allows all threads to have a fair chance of starting at about the same time.|
+|**Semaphore**| A lock that waits for a number of events before releasing all threads waiting on it. This allows all threads to have a fair chance of starting at about the same time.|
+    
 
 #### Know Your Execution Models  
 Classes | Description
-| ------------- |:-------------:|
+| ------------- |:-------------|
 |**Bound Resources**| Resources of a fixed size or number used in a concurrent environment. Examples include database connections and fixed-size read/ write buffers.|
 |**Mutual Exclusion**| One thread or a group of threads is prohibited from proceeding for an excessively long time or forever. For example, always letting fast-running threads through first could starve out longer running threads if there is no end to the fast-running threads.|
 |**Livelock**| Threads in lockstep, each trying to do work but finding another “in the way.” Due to resonance, threads continue trying to make progress but are unable to for an excessively long time— or forever.|
@@ -186,7 +188,7 @@ When you have a shared resource that primarily serves as a source of information
 Imagine a number of philosophers sitting around a circular table. A fork is placed to the left of each philosopher. There is a big bowl of spaghetti in the center of the table. The philosophers spend their time thinking unless they get hungry. Once hungry, they pick up the forks on either side of them and eat. A philosopher cannot eat unless he is holding two forks. If the philosopher to his right or left is already using one of the forks he needs, he must wait until that philosopher finishes eating and puts the forks back down. Once a philosopher eats, he puts both his forks back down on the table and waits until he is hungry again. Replace philosophers with threads and forks with resources and this problem is similar to many enterprise applications in which processes compete for resources. Unless carefully designed, systems that compete in this way can experience deadlock, livelock, throughput, and efficiency degradation.
 Most concurrent problems you will likely encounter will be some variation of these three problems. Study these algorithms and write solutions using them on your own so that when you come across concurrent problems, you’ll be more prepared to solve the problem.
 ***
-### Chapter 17 Smell and Heuristics
+## Chapter 17 Smell and Heuristics
 #### Comments
 Inappropriate Information  
 Obsolete Comment  
